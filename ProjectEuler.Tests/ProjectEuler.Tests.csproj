@@ -54,7 +54,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ProjectEuler.csproj">
+    <ProjectReference Include="..\ProjectEuler\ProjectEuler.csproj">
       <Project>{d8db041d-5bf4-4143-964d-772dad47884d}</Project>
       <Name>ProjectEuler</Name>
     </ProjectReference>

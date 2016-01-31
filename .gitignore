@@ -1,7 +1,7 @@
 .vs/
 
-bin/*
-obj/*
+ProjectEuler/bin/*
+ProjectEuler/obj/*
 
 ProjectEuler.Tests/bin/*
 ProjectEuler.Tests/obj/*
