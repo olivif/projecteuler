@@ -1,0 +1,7 @@
+.vs/
+
+bin/*
+obj/*
+
+ProjectEuler.Tests/bin/*
+ProjectEuler.Tests/obj/*
