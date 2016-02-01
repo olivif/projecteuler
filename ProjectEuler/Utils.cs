@@ -40,5 +40,35 @@
         {
             return Utils.GetFactorial(n) / (Utils.GetFactorial(k) * Utils.GetFactorial(n - k));
         }
+
+        /// <summary>
+        /// A number is perfect if it is equal to the sum of its divisors
+        /// </summary>
+        /// <param name="x"></param>
+        /// <returns></returns>
+        public static bool IsPerfectNumber(int x)
+        {
+            return x == Utils.GetDivisors(x).Sum();
+        }
+
+        /// <summary>
+        /// A number n is called deficient if the sum of its proper divisors is less than n
+        /// </summary>
+        /// <param name="x"></param>
+        /// <returns></returns>
+        public static bool IsDeficientNumber(int x)
+        {
+            return Utils.GetDivisors(x).Sum() < x;
+        }
+
+        /// <summary>
+        /// A number n is called abundant if the sum of its proper divisors exceeds n
+        /// </summary>
+        /// <param name="x"></param>
+        /// <returns></returns>
+        public static bool IsAbundantNumber(int x)
+        {
+            return Utils.GetDivisors(x).Sum() > x;
+        }
     }
 }

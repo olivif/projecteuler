@@ -45,5 +45,24 @@ namespace ProjectEuler.Tests
             Assert.AreEqual(Utils.GetCombinations(3, 2), 3);
             Assert.AreEqual(Utils.GetCombinations(5, 2), 10);
         }
+
+        [TestMethod]
+        public void IsPerfect()
+        {
+            Assert.IsTrue(Utils.IsPerfectNumber(28));
+            Assert.IsFalse(Utils.IsPerfectNumber(29));
+        }
+
+        [TestMethod]
+        public void IsDeficient()
+        {
+            Assert.IsTrue(Utils.IsDeficientNumber(17));
+        }
+
+        [TestMethod]
+        public void IsAbundant()
+        {
+            Assert.IsTrue(Utils.IsAbundantNumber(12));
+        }
     }
 }
