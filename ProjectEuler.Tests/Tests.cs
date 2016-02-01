@@ -64,5 +64,29 @@ namespace ProjectEuler.Tests
         {
             Assert.IsTrue(Utils.IsAbundantNumber(12));
         }
+
+        [TestMethod]
+        public void GetPermutations()
+        {
+            var chars = "012".ToCharArray();
+            var permutations = Utils.GetPermutations(chars);
+
+            Assert.AreEqual(permutations.Count, 6);
+            Assert.AreEqual(permutations[0], "012");
+            Assert.AreEqual(permutations[1], "021");
+            Assert.AreEqual(permutations[2], "102");
+            Assert.AreEqual(permutations[3], "120");
+            Assert.AreEqual(permutations[4], "201");
+            Assert.AreEqual(permutations[5], "210");
+        }
+
+        [TestMethod]
+        public void GetPermutation()
+        {
+            var chars = "012".ToCharArray();
+
+            Assert.AreEqual(Utils.GetPermutation(chars, 0), "012");
+            Assert.AreEqual(Utils.GetPermutation(chars, 4), "201");
+        }
     }
 }

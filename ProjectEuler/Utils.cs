@@ -1,5 +1,7 @@
 ﻿namespace ProjectEuler
 {
+    using Combinatorics.Collections;
+    using System;
     using System.Collections.Generic;
     using System.Linq;
 
@@ -69,6 +71,37 @@
         public static bool IsAbundantNumber(int x)
         {
             return Utils.GetDivisors(x).Sum() > x;
+        }
+
+        /// <summary>
+        /// Get permutations of a list of chars
+        /// </summary>
+        /// <param name="list"></param>
+        public static List<string> GetPermutations(char[] list)
+        {
+            var rawPermutations = new Permutations<char>(list);
+            var permutations = rawPermutations.Select(chars => string.Join("", chars));
+            
+            return permutations.ToList();
+        }
+
+        /// <summary>
+        /// Get a specific permutation
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="index"></param>
+        /// <returns></returns>
+        public static string GetPermutation(char[] list, int index)
+        {
+            var rawPermutations = new Permutations<char>(list);
+            var permutations = rawPermutations.Select(chars => string.Join("", chars)).ToList();
+
+            if (permutations.Count <= index)
+            {
+                throw new ArgumentException("Index is beyond the number of permutations");
+            }
+
+            return permutations[index];
         }
     }
 }
