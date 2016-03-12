@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 
 namespace ProjectEuler.Tests
 {
@@ -87,6 +88,14 @@ namespace ProjectEuler.Tests
 
             Assert.AreEqual(Utils.GetPermutation(chars, 0), "012");
             Assert.AreEqual(Utils.GetPermutation(chars, 4), "201");
+        }
+
+        [TestMethod]
+        public void GetClosestFibbonnaci()
+        {
+            var closest = Utils.GetClosestFibbonnaci(BigInteger.Pow(10, 999));
+
+            Assert.AreEqual((ulong)4782, closest);
         }
     }
 }

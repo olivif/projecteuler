@@ -4,6 +4,7 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Numerics;
 
     public class Utils
     {
@@ -103,5 +104,30 @@
 
             return permutations[index];
         }
+
+        /// <summary>
+        /// Gets the closest Fibonnaci term index that is larger than the limit
+        /// </summary>
+        /// <param name="limit">The limit of the fibbonnaci value</param>
+        /// <returns>The index of the fibonnaci term</returns>
+        public static ulong GetClosestFibbonnaci(BigInteger limit)
+        {
+            BigInteger previous = 1;
+            BigInteger current = 1;
+            ulong n = 2;
+
+            while(current <= limit)
+            {
+                BigInteger temp = current;
+                current = BigInteger.Add(current, previous);
+                previous = temp;
+                n++;
+
+                Console.WriteLine("Term {0} is {1}", n, current);
+            }
+
+            return n;
+        }
+
     }
 }
